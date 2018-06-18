@@ -1,5 +1,6 @@
 from hotel import Hotel
 from customer import Customer
+from notification import Notification
 class Reservation():
 	reservations_list = []
 	def __init__(self, hotel_name, customer_name, mobile):
@@ -19,6 +20,12 @@ class Reservation():
 					Hotel.hotels[i][4] -= 1
 					return "confirmation"
 			i += 1
+	def add_new_reservation(self):
+		if reserve_room(self) == "confirmation":
+			send_text_message(messege, mobile)
+			print "confirmation"
+		else:
+			print "no rooms available"
 
 	def reservation_list_in_hotel(self):
 		reservation_list = []

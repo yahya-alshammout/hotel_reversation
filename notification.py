@@ -1,4 +1,3 @@
-from reservations import Reservation
 from twilio.rest import Client
 class Notification():
 	def __init__(self, messege, mobile):
@@ -14,11 +13,6 @@ class Notification():
 			from_ = '+13158885133',
 			to = mobile)
 		message.sid
-	def send_message(self):
-		if Reservation.reserve_room() == "confirmation":
-			send_text_message("confirmation", mobile)
-			print "confirmation"
-		else:
-			print "no rooms available"
+
 
 
